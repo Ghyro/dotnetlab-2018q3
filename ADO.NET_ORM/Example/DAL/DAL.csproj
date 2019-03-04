@@ -52,9 +52,17 @@
   <ItemGroup>
     <Compile Include="Configuration\ItemConfig.cs" />
     <Compile Include="Configuration\OrderConfig.cs" />
+<<<<<<< HEAD
+    <Compile Include="Configuration\OrderItemConfig.cs" />
     <Compile Include="Context\AppDbContext.cs" />
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderItem.cs" />
+=======
+    <Compile Include="Context\AppDbContext.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\Order.cs" />
+>>>>>>> 1c23a0cb8f3b54ae925267c6e31cf8f859cc0ca4
     <Compile Include="Migrations\201903041138573_Initial.cs" />
     <Compile Include="Migrations\201903041138573_Initial.Designer.cs">
       <DependentUpon>201903041138573_Initial.cs</DependentUpon>
@@ -63,6 +71,13 @@
     <Compile Include="Migrations\201903041323328_Step2.Order.Designer.cs">
       <DependentUpon>201903041323328_Step2.Order.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Migrations\201903041345131_Step3.OrderItem.cs" />
+    <Compile Include="Migrations\201903041345131_Step3.OrderItem.Designer.cs">
+      <DependentUpon>201903041345131_Step3.OrderItem.cs</DependentUpon>
+    </Compile>
+=======
+>>>>>>> 1c23a0cb8f3b54ae925267c6e31cf8f859cc0ca4
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +92,12 @@
     <EmbeddedResource Include="Migrations\201903041323328_Step2.Order.resx">
       <DependentUpon>201903041323328_Step2.Order.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="Migrations\201903041345131_Step3.OrderItem.resx">
+      <DependentUpon>201903041345131_Step3.OrderItem.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> 1c23a0cb8f3b54ae925267c6e31cf8f859cc0ca4
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

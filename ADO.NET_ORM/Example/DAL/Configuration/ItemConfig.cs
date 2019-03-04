@@ -16,6 +16,7 @@ namespace DAL.Configuration
             this.Property(i => i.Id).HasColumnName("cln_item_id");
             this.Property(i => i.Description).HasColumnName("cln_description");
             this.Property(i => i.Price).HasColumnName("cln_price");
+            this.HasMany(i => i.OrderItems).WithRequired().HasForeignKey(p => p.ItemId);
         }
     }
 }
