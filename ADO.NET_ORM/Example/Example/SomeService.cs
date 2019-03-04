@@ -8,23 +8,32 @@ namespace Example
 {
     public class SomeService
     {
-        public void DoSmth()
+        public void PrintItems()
         {
-            using (var context = new AppDbContext())
+            using (var _context = new AppDbContext())
             {
-                var items = context.Items.ToList();
+                var items = _context.Items.ToList();
 
-                this.PrintItems(items.ToList());
-            }
-        }
+                var customers = _context.Customers.Include("Order.OrderItems").ToList();
 
-        private void PrintItems(List<Item> items)
-        {
-            Console.WriteLine($"Items count: {items.Count}");
+                foreach (var customer in customers)
+                {
+                    Console.WriteLine($"Orders for customer {customer.Id} - {customer.Name}:");
 
-            foreach (var item in items)
-            {
-                Console.WriteLine($"{item.Id} - {item.Description} - {item.Price}");
+                    foreach (var order in customer.Order)
+                    {
+                        Console.WriteLine($"Id: {order.Id}");
+
+                        foreach (var orderItem in order.OrderItems)
+                        {
+                            var item = items.Single(i => i.Id == orderItem.ItemId);
+
+                            Console.WriteLine($"{item.Id} - {item.Description} - ${item.Price} - {orderItem.Quantity}$");
+                        }
+
+                        Console.WriteLine();
+                    }
+                }
             }
         }
     }

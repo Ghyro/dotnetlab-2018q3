@@ -5,7 +5,7 @@ namespace Example
     {
         static void Main(string[] args)
         {
-            new SomeService().DoSmth();
+            new SomeService().PrintItems();
 
             Console.WriteLine("Main Completed");
 

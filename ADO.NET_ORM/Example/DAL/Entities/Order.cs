@@ -10,6 +10,8 @@ namespace DAL.Entities
     {
         public int Id { get; set; }
 
+        public int CustomerId { get; set; }
+
         public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

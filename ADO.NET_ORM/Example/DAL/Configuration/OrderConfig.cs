@@ -14,6 +14,7 @@ namespace DAL.Configuration
         {
             this.ToTable("tbl_orders").HasKey(i => i.Id);
             this.Property(i => i.Id).HasColumnName("cln_order_id");
+            this.Property(i => i.CustomerId).HasColumnName("cln_customer_id");
             this.HasMany(i => i.OrderItems).WithRequired().HasForeignKey(p => p.OrderId);
         }
     }
