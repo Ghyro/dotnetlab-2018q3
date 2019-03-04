@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DAL.Context;
+using DAL.Entities;
 
 namespace Example
 {
@@ -12,12 +14,17 @@ namespace Example
             {
                 var items = context.Items.ToList();
 
-                Console.WriteLine($"Items number: {items.Count}");
+                this.PrintItems(items.ToList());
+            }
+        }
 
-                foreach (var item in items)
-                {
-                    Console.WriteLine($"{item.Id} - {item.Description} - {item.Price}");
-                }
+        private void PrintItems(List<Item> items)
+        {
+            Console.WriteLine($"Items count: {items.Count}");
+
+            foreach (var item in items)
+            {
+                Console.WriteLine($"{item.Id} - {item.Description} - {item.Price}");
             }
         }
     }
