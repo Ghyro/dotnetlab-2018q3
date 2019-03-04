@@ -22,7 +22,6 @@ namespace DAL.Migrations
                  ('56'' Blue Freen', 3.5),
 
                  ('Spline End (Xtra Large)', 0.25)
-
                 ");
         }
         
